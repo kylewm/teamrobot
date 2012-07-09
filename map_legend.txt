@@ -1,0 +1,43 @@
+- TERRAIN - 
+. - floor
+0 - solid wall
+1 - bombable wall
+2 - laserable wall 
+3 - pushable wall
+4 - drillable wall
+5 - water
+6 - pit
+
+- ITEMS -
+r - red switch
+g - green switch
+b - blue switch
+o - orange switch
+q - heavy red switch
+w - heavy green switch
+a - heavy blue switch
+z - heavy orange switch
+R - North/south red gate
+G - North/south green gate
+B - North/south blue gate
+O - North/south orange gate
+Q - East/west red gate
+W - East/west green gate
+A - East/west blue gate
+Z - East/west orange gate
+
+- ENEMIES -
+{ - Enemy facing left
+} - Enemy facing right
+[ - Enemy facing up
+] - Enemy facing down
+
+- ARROWS - 
+< - left
+> - right
+^ - up
+v - down
+
+- LANDMARKS -
+s - start
+f - finish
