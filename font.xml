@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<resources>
+	<sprite name="font_glyph1">
+		<image file="images/fonts/verdana12.tga"><alpha /></image>
+	</sprite>
+	
+	<sprite name="font_glyph2">
+		<image file="images/fonts/verdana18.tga"><alpha /></image>
+	</sprite>
+
+	<font name="Font1" width_offset="1" height_offset="1">
+		<bitmap glyphs="font_glyph1" letters="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789.,'?:!/-" />
+	</font>
+	
+	<font name="Font2" width_offset="0" height_offset="1">
+		<bitmap glyphs="font_glyph2" letters="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789.,'?:!/-" />
+	</font>
+
+</resources>
