@@ -84,27 +84,27 @@ GameDisplay::GameDisplay(GameUI *UI): cur_loc(-1.0f), ctr(0), x_start(0), y_star
 	finish55 = new CL_Surface("images/terrain/finish55.png");
 	finish60 = new CL_Surface("images/terrain/finish60.png");
 
-	pause_icon = new CL_Surface("images/UI/paused.png");
+	pause_icon = new CL_Surface("images/ui/paused.png");
 	
 	// load movable images
 	selected = new CL_Surface("images/movables/selected-full-green.png");
 	in_train = new CL_Surface("images/movables/highlight-full.png");
-	block = new CL_Surface("images/movables/block.PNG");
-	genericbot = new CL_Surface("images/movables/genericbotAnim.png");
+	block = new CL_Surface("images/movables/block.png");
+	genericbot = new CL_Surface("images/movables/genericbot.png");
 	caboosebot = new CL_Surface("images/movables/caboosebot.png");
-	bridgebot = new CL_Surface("images/movables/bridgebot.PNG");
+	bridgebot = new CL_Surface("images/movables/bridgebot.png");
 	arrowbot = new CL_Surface("images/movables/arrowbot.png");
 	drillbot = new CL_Surface("images/movables/drillbot.png");
 	pushbot = new CL_Surface("images/movables/pushbot.png");
 	decoybot = new CL_Surface("images/movables/baitbot.png");
 	bombbot = new CL_Surface("images/movables/bombbot.png");
-	turnbot_left = new CL_Surface("images/movables/turnleftbot.png");
-	turnbot_right = new CL_Surface("images/movables/turnrightbot.png");
-	wallcrawler_left = new CL_Surface("images/movables/wallcrawlerleft.png");
-	wallcrawler_right = new CL_Surface("images/movables/wallcrawlerright.png");
-	swimbot = new CL_Surface("images/movables/swimbot.PNG");
-	swimbotUnderwater = new CL_Surface("images/movables/swimbotUnderwater.png");
-	enemy = new CL_Surface("images/movables/enemy1.png");
+	turnbot_left = new CL_Surface("images/movables/turnbot_left.png");
+	turnbot_right = new CL_Surface("images/movables/turnbot_right.png");
+	wallcrawler_left = new CL_Surface("images/movables/wallcrawler_left.png");
+	wallcrawler_right = new CL_Surface("images/movables/wallcrawler_right.png");
+	swimbot = new CL_Surface("images/movables/swimbot.png");
+	swimbotUnderwater = new CL_Surface("images/movables/swimbot_under.png");
+	enemy = new CL_Surface("images/movables/enemybot.png");
 
 	explosion1 = new CL_Surface("images/terrain/explosion_01.png");
 	explosion2 = new CL_Surface("images/terrain/explosion_02.png");
@@ -852,7 +852,7 @@ gameState_t GameDisplay::show(bool paused)
 			}
 		}
 	}
-	for (j = 0; j < 20; j++) {
+	for (int j = 0; j < 20; j++) {
 		for (int i = 0; i < 20; i++) {
 			curTile = myBoard->getTileAt(j,i);
 			
@@ -956,7 +956,7 @@ gameState_t GameDisplay::show(bool paused)
 				} // end for (iter...
 			} // end for (int i = 0...
 	} // end for (j = 0...
-	for (j = 0; j < 20; j++) {
+	for (int j = 0; j < 20; j++) {
 		for (int i = 0; i < 20; i++) {
 			curTile = myBoard->getTileAt(j,i);
 			

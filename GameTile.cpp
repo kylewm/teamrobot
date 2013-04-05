@@ -21,7 +21,6 @@ GameTile::GameTile(terrain_t newType) {
 
 GameTile::~GameTile()
 {
-	moveableList.~vector();
 }
 
 void GameTile::addMoveable(Moveable *obj) {

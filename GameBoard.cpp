@@ -10,7 +10,7 @@
 #include "PushBot.h"
 #include "CabooseBot.h"
 #include "DrillBot.h"
-#include "Swimbot.h"
+#include "SwimBot.h"
 #include "BombBot.h"
 #include "TurnBot.h"
 #include "WallCrawler.h"
@@ -18,6 +18,7 @@
 #include "Enemy.h"
 #include "DecoyBot.h"
 
+#include <stdlib.h>
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -30,13 +31,6 @@ GameBoard::GameBoard()
 
 GameBoard::~GameBoard()
 {
-	changeList.~vector();
-	gateList.~vector();
-	mapTitle.~basic_string();
-	moveableList.~vector();
-	train.~vector();
-	//decoyList.~vector();
-
 	for(int i = 0; i < 20; ++i) {
 		for(int j = 0; j < 20; ++j) {
 			delete tiles[i][j];
@@ -109,7 +103,7 @@ bool GameBoard::loadBoard(const char *filename) {
 			char inChar;
 			Moveable *m;
 
-			if ((inChar = fgetc(fp)) == NULL) {
+			if ((inChar = fgetc(fp)) == EOF) {
 				printf("Incorrect format for game board: %s\n", filename);
 				return false;
 			}
@@ -287,7 +281,7 @@ bool GameBoard::loadBoard(const char *filename) {
 	startDirection = NONE;
 	gameState = NOTFINISHED;
 
-	for(i = 0; i <= numberOfBots; ++i) {
+	for(int i = 0; i <= numberOfBots; ++i) {
 		train.at(i)->setX(startX);
 		train.at(i)->setY(startY);
 		train.at(i)->setPrevX(startX);
@@ -316,7 +310,7 @@ void GameBoard::moveAll() {
 		}
 	}
 
-	for (i = 0; i < moveableList.size(); i++) {
+	for (int i = 0; i < moveableList.size(); i++) {
 		Moveable *temp = moveableList.at(i);
 		if(temp->getDeployedOnBoard()) {
 			temp->move();
@@ -330,7 +324,7 @@ void GameBoard::collideAll() {
 		temp->setHeadOn(false);
 	}
 
-	for (i = 0; i < moveableList.size(); i++) {
+	for (int i = 0; i < moveableList.size(); i++) {
 		Moveable *temp = moveableList.at(i);
 		if(temp->getDeployedOnBoard()) {
 			temp->collide();
